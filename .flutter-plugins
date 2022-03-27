@@ -1,0 +1,24 @@
+# This is a generated file; do not edit or check into version control.
+flutter_plugin_android_lifecycle=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.5/
+geolocator=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator-8.0.5/
+geolocator_android=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_android-3.0.2/
+geolocator_apple=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_apple-2.0.1/
+geolocator_web=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/geolocator_web-2.1.4/
+google_maps_flutter=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-2.0.9/
+image_picker=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.8.4+1/
+image_picker_for_web=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_for_web-2.1.6/
+path_provider=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.2/
+path_provider_linux=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.0.0/
+path_provider_macos=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.0/
+path_provider_windows=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.1/
+shared_preferences=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.6/
+shared_preferences_linux=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_linux-2.0.0/
+shared_preferences_macos=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-2.0.0/
+shared_preferences_web=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-2.0.0/
+shared_preferences_windows=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_windows-2.0.0/
+tflite=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/tflite-1.1.2/
+url_launcher=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-6.0.6/
+url_launcher_linux=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_linux-2.0.0/
+url_launcher_macos=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-2.0.0/
+url_launcher_web=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-2.0.1/
+url_launcher_windows=/Users/sijanpoudel/devloper/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_windows-2.0.0/
