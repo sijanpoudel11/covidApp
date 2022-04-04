@@ -12,15 +12,15 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:3:3-64
-14-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:3:20-62
+14-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:3:3-64
+14-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:3:20-62
 15    <!-- Add this -->
 16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-16-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:4:3-77
-16-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:4:20-74
+16-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:4:3-77
+16-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:4:20-74
 17    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" /> <!-- Include required permissions for Google Maps API to run. -->
-17-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:5:3-83
-17-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:5:20-80
+17-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:5:3-83
+17-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:5:20-80
 18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 18-->[com.google.android.gms:play-services-maps:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/c5de8972dacd649c27c247c9e16de3ac/jetified-play-services-maps-17.0.0/AndroidManifest.xml:23:5-79
 18-->[com.google.android.gms:play-services-maps:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/c5de8972dacd649c27c247c9e16de3ac/jetified-play-services-maps-17.0.0/AndroidManifest.xml:23:22-76
@@ -33,28 +33,28 @@
 22-->[com.google.android.gms:play-services-maps:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/c5de8972dacd649c27c247c9e16de3ac/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
 23
 24    <application
-24-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:6:4-45:19
+24-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:6:4-45:19
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-25-->[androidx.core:core:1.1.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/2e94107f30f39be366a17347c2bf100b/core-1.1.0/AndroidManifest.xml:24:18-86
+25-->[androidx.core:core:1.6.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/5f663b08eec19eef9a9d1af662d9025e/core-1.6.0/AndroidManifest.xml:24:18-86
 26        android:debuggable="true"
 27        android:icon="@mipmap/ic_launcher"
-27-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:8:9-43
+27-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:8:9-43
 28        android:label="covid_aware_app" >
-28-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:7:9-40
+28-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:7:9-40
 29        <activity
-29-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:9:9-37:20
+29-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:9:9-37:20
 30            android:name="com.example.covid_aware_app.MainActivity"
-30-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:10:13-41
+30-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:10:13-41
 31            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-31-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:13:13-163
+31-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:13:13-163
 32            android:hardwareAccelerated="true"
-32-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:14:13-47
+32-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:14:13-47
 33            android:launchMode="singleTop"
-33-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:11:13-43
+33-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:11:13-43
 34            android:theme="@style/LaunchTheme"
-34-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:12:13-47
+34-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:12:13-47
 35            android:windowSoftInputMode="adjustResize" >
-35-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:15:13-55
+35-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:15:13-55
 36
 37            <!--
 38                 Specifies an Android theme to apply to this Activity as soon as
@@ -63,11 +63,11 @@
 41                 to determine the Window background behind the Flutter UI.
 42            -->
 43            <meta-data
-43-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:20:13-23:17
+43-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:20:13-23:17
 44                android:name="io.flutter.embedding.android.NormalTheme"
-44-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:21:15-70
+44-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:21:15-70
 45                android:resource="@style/NormalTheme" />
-45-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:22:15-52
+45-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:22:15-52
 46            <!--
 47                 Displays an Android View that continues showing the launch screen
 48                 Drawable until Flutter paints its first frame, then this splash
@@ -76,21 +76,21 @@
 51                 Flutter's first frame.
 52            -->
 53            <meta-data
-53-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:29:13-32:17
+53-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:29:13-32:17
 54                android:name="io.flutter.embedding.android.SplashScreenDrawable"
-54-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:30:15-79
+54-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:30:15-79
 55                android:resource="@drawable/launch_background" />
-55-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:31:15-61
+55-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:31:15-61
 56
 57            <intent-filter>
-57-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:33:13-36:29
+57-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:33:13-36:29
 58                <action android:name="android.intent.action.MAIN" />
-58-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:34:17-68
-58-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:34:25-66
+58-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:34:17-68
+58-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:34:25-66
 59
 60                <category android:name="android.intent.category.LAUNCHER" />
-60-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:35:17-76
-60-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:35:27-74
+60-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:35:17-76
+60-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:35:27-74
 61            </intent-filter>
 62        </activity>
 63        <!--
@@ -98,66 +98,79 @@
 65             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
 66        -->
 67        <meta-data
-67-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:40:9-42:33
+67-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:40:9-42:33
 68            android:name="flutterEmbedding"
-68-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:41:13-44
+68-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:41:13-44
 69            android:value="2" />
-69-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:42:13-30
+69-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:42:13-30
 70        <meta-data
-70-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:43:9-44:73
+70-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:43:9-44:73
 71            android:name="com.google.android.geo.API_KEY"
-71-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:43:20-65
+71-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:43:20-65
 72            android:value="AIzaSyB0HILAmvLuhnyOCCLT13wsT1PVTjjkbqU" />
-72-->/Users/sijanpoudel/Desktop/flutter/covid_app/android/app/src/main/AndroidManifest.xml:44:16-71
+72-->/Users/sijanpoudel/Desktop/flutter/covidApp/android/app/src/main/AndroidManifest.xml:44:16-71
 73
 74        <activity
-74-->[:url_launcher] /Users/sijanpoudel/Desktop/flutter/covid_app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+74-->[:url_launcher] /Users/sijanpoudel/Desktop/flutter/covidApp/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
 75            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-75-->[:url_launcher] /Users/sijanpoudel/Desktop/flutter/covid_app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+75-->[:url_launcher] /Users/sijanpoudel/Desktop/flutter/covidApp/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
 76            android:exported="false"
-76-->[:url_launcher] /Users/sijanpoudel/Desktop/flutter/covid_app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+76-->[:url_launcher] /Users/sijanpoudel/Desktop/flutter/covidApp/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
 77            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
-77-->[:url_launcher] /Users/sijanpoudel/Desktop/flutter/covid_app/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
+77-->[:url_launcher] /Users/sijanpoudel/Desktop/flutter/covidApp/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
 78
 79        <provider
-79-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covid_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-16:20
+79-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covidApp/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-16:20
 80            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-80-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covid_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-82
+80-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covidApp/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-82
 81            android:authorities="com.example.covid_aware_app.flutter.image_provider"
-81-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covid_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-74
+81-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covidApp/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-74
 82            android:exported="false"
-82-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covid_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-37
+82-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covidApp/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-37
 83            android:grantUriPermissions="true" >
-83-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covid_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-47
+83-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covidApp/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-47
 84            <meta-data
-84-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covid_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:75
+84-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covidApp/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:75
 85                android:name="android.support.FILE_PROVIDER_PATHS"
-85-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covid_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-67
+85-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covidApp/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-67
 86                android:resource="@xml/flutter_image_picker_file_paths" />
-86-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covid_app/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-72
-87        </provider> <!-- Needs to be explicitly declared on P+ -->
-88        <uses-library
-88-->[com.google.android.gms:play-services-maps:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/c5de8972dacd649c27c247c9e16de3ac/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
-89            android:name="org.apache.http.legacy"
-89-->[com.google.android.gms:play-services-maps:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/c5de8972dacd649c27c247c9e16de3ac/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
-90            android:required="false" />
-90-->[com.google.android.gms:play-services-maps:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/c5de8972dacd649c27c247c9e16de3ac/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
-91
-92        <activity
-92-->[com.google.android.gms:play-services-base:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/7c879cb157fab2c9a5d74c3d70fd64e3/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
-93            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-93-->[com.google.android.gms:play-services-base:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/7c879cb157fab2c9a5d74c3d70fd64e3/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
-94            android:exported="false"
-94-->[com.google.android.gms:play-services-base:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/7c879cb157fab2c9a5d74c3d70fd64e3/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
-95            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-95-->[com.google.android.gms:play-services-base:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/7c879cb157fab2c9a5d74c3d70fd64e3/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
-96
-97        <meta-data
-97-->[com.google.android.gms:play-services-basement:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/3c8e7eb3d21ac94d08f658f6d8a1c9f3/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
-98            android:name="com.google.android.gms.version"
-98-->[com.google.android.gms:play-services-basement:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/3c8e7eb3d21ac94d08f658f6d8a1c9f3/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
-99            android:value="@integer/google_play_services_version" />
-99-->[com.google.android.gms:play-services-basement:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/3c8e7eb3d21ac94d08f658f6d8a1c9f3/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
-100    </application>
-101
-102</manifest>
+86-->[:image_picker] /Users/sijanpoudel/Desktop/flutter/covidApp/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-72
+87        </provider>
+88
+89        <uses-library
+89-->[androidx.window:window:1.0.0-beta04] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/a78fdf90e4c1f8464b19895cfb365f3f/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+90            android:name="androidx.window.extensions"
+90-->[androidx.window:window:1.0.0-beta04] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/a78fdf90e4c1f8464b19895cfb365f3f/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+91            android:required="false" />
+91-->[androidx.window:window:1.0.0-beta04] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/a78fdf90e4c1f8464b19895cfb365f3f/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+92        <uses-library
+92-->[androidx.window:window:1.0.0-beta04] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/a78fdf90e4c1f8464b19895cfb365f3f/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+93            android:name="androidx.window.sidecar"
+93-->[androidx.window:window:1.0.0-beta04] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/a78fdf90e4c1f8464b19895cfb365f3f/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+94            android:required="false" /> <!-- Needs to be explicitly declared on P+ -->
+94-->[androidx.window:window:1.0.0-beta04] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/a78fdf90e4c1f8464b19895cfb365f3f/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+95        <uses-library
+95-->[com.google.android.gms:play-services-maps:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/c5de8972dacd649c27c247c9e16de3ac/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+96            android:name="org.apache.http.legacy"
+96-->[com.google.android.gms:play-services-maps:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/c5de8972dacd649c27c247c9e16de3ac/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+97            android:required="false" />
+97-->[com.google.android.gms:play-services-maps:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/c5de8972dacd649c27c247c9e16de3ac/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+98
+99        <activity
+99-->[com.google.android.gms:play-services-base:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/7c879cb157fab2c9a5d74c3d70fd64e3/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+100            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+100-->[com.google.android.gms:play-services-base:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/7c879cb157fab2c9a5d74c3d70fd64e3/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+101            android:exported="false"
+101-->[com.google.android.gms:play-services-base:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/7c879cb157fab2c9a5d74c3d70fd64e3/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+102            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+102-->[com.google.android.gms:play-services-base:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/7c879cb157fab2c9a5d74c3d70fd64e3/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+103
+104        <meta-data
+104-->[com.google.android.gms:play-services-basement:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/3c8e7eb3d21ac94d08f658f6d8a1c9f3/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+105            android:name="com.google.android.gms.version"
+105-->[com.google.android.gms:play-services-basement:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/3c8e7eb3d21ac94d08f658f6d8a1c9f3/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+106            android:value="@integer/google_play_services_version" />
+106-->[com.google.android.gms:play-services-basement:17.0.0] /Users/sijanpoudel/.gradle/caches/transforms-2/files-2.1/3c8e7eb3d21ac94d08f658f6d8a1c9f3/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+107    </application>
+108
+109</manifest>

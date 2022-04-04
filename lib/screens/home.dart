@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:io';
+import 'dart:math';
 
 import 'package:covid_aware_app/data.dart';
 import 'package:covid_aware_app/screens/countryScreen.dart';
@@ -9,6 +9,8 @@ import 'package:covid_aware_app/screens/xrayTestScreen.dart';
 import 'package:covid_aware_app/widgets/MostAffectedCountries.dart';
 import 'package:covid_aware_app/widgets/worldWidePanel.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher.dart';
 
@@ -22,6 +24,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   Map? worldData;
   List? countryData;
+  Position? myPosition;
   Map? myCountry;
   void launchUrl() async {
     const url = 'https://covid19responsefund.org/';
@@ -65,6 +68,130 @@ class _HomeState extends State<Home> {
     });
   }
 
+  double degreesToRadians(degrees) {
+    return degrees * pi / 180;
+  }
+
+  String calculateDistance(LatLng location1, LatLng location2) {
+    var earthRadiusKm = 6371;
+    var dLat = degreesToRadians(location2.latitude - location1.latitude);
+    var dLong = degreesToRadians(location2.longitude - location1.longitude);
+    var a = sin(dLat / 2) * sin(dLat / 2) +
+        cos(degreesToRadians(location2.latitude)) *
+            cos(degreesToRadians(location1.latitude)) *
+            sin(dLong / 2) *
+            sin(dLong / 2);
+    var c = 2 * atan2(sqrt(a), sqrt(1 - a));
+    var d = (earthRadiusKm * c).toStringAsFixed(2);
+
+    print(d);
+    return d;
+  }
+
+  Future<Position> getPosition() async {
+    LocationPermission? permission;
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+
+      if (permission == LocationPermission.deniedForever) {
+        return Future.error('permission denied');
+      }
+    }
+    print(await Geolocator.getCurrentPosition());
+    return await Geolocator.getCurrentPosition();
+  }
+
+  void calculateAllDistance() {
+    var distance;
+    coOrdinates[0].forEach((element) {
+      for (var i = 0; i < element.length; i++) {
+        distance = calculateDistance(
+            element[1], LatLng(myPosition!.latitude, myPosition!.longitude));
+      }
+      // element.add(distance);
+      setState(() {
+        element.add(distance);
+      });
+    });
+    print(coOrdinates);
+  }
+
+  void sortHospitalsByLocation() {
+    print(coOrdinates);
+    coOrdinates[0].sort((a, b) => a[2].compareTo(b[2]));
+    setState(() {});
+    print(coOrdinates);
+  }
+
+  bubbleSort(List array) {
+    int lengthOfArray = array.length;
+    for (int i = 0; i < lengthOfArray - 1; i++) {
+      for (int j = 0; j < lengthOfArray - i - 1; j++) {
+        if (double.parse(array[j][2]) > double.parse(array[j + 1][2])) {
+          // Swapping using temporary variable
+          var temp = array[j];
+          array[j] = array[j + 1];
+          array[j + 1] = temp;
+        }
+      }
+    }
+    return (array);
+  }
+
+  List<List> coOrdinates = [
+    [
+      [
+        "Bir hospital",
+        LatLng(27.7048249, 85.3136514),
+      ],
+      [
+        'Patan hospital',
+        LatLng(27.6682930, 85.3204918),
+      ],
+      [
+        'Medicity hospital',
+        LatLng(27.6623027, 85.3030976),
+      ],
+      [
+        'Sahid memorial hospital',
+        LatLng(27.6945252, 85.2810589),
+      ],
+      [
+        'Green city hospital',
+        LatLng(27.7371433, 85.3229969),
+      ],
+      [
+        'Star hospital',
+        LatLng(27.6817829, 85.3029565),
+      ],
+      [
+        'Teaching hospital',
+        LatLng(27.7353254, 85.3310080),
+      ],
+      [
+        'Sukraraj Tropical Hospital',
+        LatLng(27.6955125, 85.3063156),
+      ],
+      [
+        'Blue Cross Hospital',
+        LatLng(27.6936824, 85.3151572),
+      ],
+      [
+        "Norvic Int'l Hospital",
+        LatLng(27.6898622, 85.3191818),
+      ],
+      [
+        "Om Hospital & Research Center",
+        LatLng(27.7213600, 85.3448321),
+      ],
+      [
+        "Katmandu Valley Hospital",
+        LatLng(27.6992826, 85.3106839),
+      ]
+    ]
+  ];
+
   @override
   void initState() {
     fetchWorldData();
@@ -83,13 +210,18 @@ class _HomeState extends State<Home> {
     setState(() {
       myCountry = json.decode(response.body);
     });
+    myPosition = await getPosition();
+    print(coOrdinates);
+    calculateAllDistance();
+    bubbleSort(coOrdinates[0]);
+    print(coOrdinates);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('COVID-19 Tracker'),
+        title: Text('COVID-19 Prediction App'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -107,22 +239,6 @@ class _HomeState extends State<Home> {
                           TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  // TextButton(
-                  //     style: TextButton.styleFrom(
-                  //         backgroundColor: primaryBlack,
-                  //         shape: RoundedRectangleBorder(
-                  //             borderRadius: BorderRadius.circular(15))),
-                  //     onPressed: () {
-                  //       Navigator.push(
-                  //           context,
-                  //           MaterialPageRoute(
-                  //               builder: (context) =>
-                  //                   COUNTRYSCREEN(countryData: countryData!)));
-                  //     },
-                  //     child: Text(
-                  //       'Favorites',
-                  //       style: TextStyle(color: Colors.white, fontSize: 16),
-                  //     )),
                   TextButton(
                       style: TextButton.styleFrom(
                           backgroundColor: primaryBlack,

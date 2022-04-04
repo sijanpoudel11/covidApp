@@ -1,2 +1,3 @@
-0 COVID
-1 Normal
+0 covid
+1 normal
+2 others

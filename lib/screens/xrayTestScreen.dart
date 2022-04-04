@@ -17,6 +17,7 @@ class XrayTestScreen extends StatefulWidget {
 
 class _XrayTestScreenState extends State<XrayTestScreen> {
   bool _loading = true;
+  bool isLoading = false;
   File? _image;
   Position? myPosition;
   List? _output;
@@ -39,7 +40,7 @@ class _XrayTestScreenState extends State<XrayTestScreen> {
     return degrees * pi / 180;
   }
 
-  int calculateDistance(LatLng location1, LatLng location2) {
+  String calculateDistance(LatLng location1, LatLng location2) {
     var earthRadiusKm = 6371;
     var dLat = degreesToRadians(location2.latitude - location1.latitude);
     var dLong = degreesToRadians(location2.longitude - location1.longitude);
@@ -49,7 +50,7 @@ class _XrayTestScreenState extends State<XrayTestScreen> {
             sin(dLong / 2) *
             sin(dLong / 2);
     var c = 2 * atan2(sqrt(a), sqrt(1 - a));
-    var d = (earthRadiusKm * c).toInt();
+    var d = (earthRadiusKm * c).toStringAsFixed(2);
 
     print(d);
     return d;
@@ -73,41 +74,53 @@ class _XrayTestScreenState extends State<XrayTestScreen> {
   List<List> coOrdinates = [
     [
       [
-        "bir hospital",
-        LatLng(45.513218227614125, 9.21072419732809),
+        "Bir hospital",
+        LatLng(27.7048249, 85.3136514),
       ],
       [
         'Patan hospital',
-        LatLng(45.51374449740213, 9.212186001241207),
+        LatLng(27.6682930, 85.3204918),
       ],
       [
-        'medicity hospital',
-        LatLng(45.51474449740213, 9.213186001241207),
+        'Medicity hospital',
+        LatLng(27.6623027, 85.3030976),
       ],
       [
-        'sahid memorial hospital',
-        LatLng(45.51375549740213, 9.212186001241207),
+        'Sahid memorial hospital',
+        LatLng(27.6945252, 85.2810589),
       ],
       [
-        'green city hospital',
-        LatLng(45.51974449740213, 9.222186001241207),
+        'Green city hospital',
+        LatLng(27.7371433, 85.3229969),
       ],
       [
-        'star hospital',
-        LatLng(45.51174449740213, 9.215186001241207),
+        'Star hospital',
+        LatLng(27.6817829, 85.3029565),
       ],
       [
         'Teaching hospital',
-        LatLng(45.51574449740213, 9.212181001241207),
+        LatLng(27.7353254, 85.3310080),
       ],
       [
-        'teku hospital',
-        LatLng(45.561374449740213, 9.212112001241207),
+        'Sukraraj Tropical Hospital',
+        LatLng(27.6955125, 85.3063156),
       ],
       [
-        'teku hospital',
-        LatLng(46.561374449740213, 9.212112001241207),
+        'Blue Cross Hospital',
+        LatLng(27.6936824, 85.3151572),
       ],
+      [
+        "Norvic Int'l Hospital",
+        LatLng(27.6898622, 85.3191818),
+      ],
+      [
+        "Om Hospital & Research Center",
+        LatLng(27.7213600, 85.3448321),
+      ],
+      [
+        "Katmandu Valley Hospital",
+        LatLng(27.6992826, 85.3106839),
+      ]
     ]
   ];
   @override
@@ -125,8 +138,14 @@ class _XrayTestScreenState extends State<XrayTestScreen> {
     super.didChangeDependencies();
     myPosition = await getPosition();
     print(coOrdinates);
+    setState(() {
+      isLoading = true;
+    });
     calculateAllDistance();
     bubbleSort(coOrdinates[0]);
+    setState(() {
+      isLoading = false;
+    });
     print(coOrdinates);
     // sortHospitalsByLocation();
   }
@@ -206,7 +225,7 @@ class _XrayTestScreenState extends State<XrayTestScreen> {
     int lengthOfArray = array.length;
     for (int i = 0; i < lengthOfArray - 1; i++) {
       for (int j = 0; j < lengthOfArray - i - 1; j++) {
-        if (array[j][2] > array[j + 1][2]) {
+        if (double.parse(array[j][2]) > double.parse(array[j + 1][2])) {
           // Swapping using temporary variable
           var temp = array[j];
           array[j] = array[j + 1];
@@ -231,41 +250,44 @@ class _XrayTestScreenState extends State<XrayTestScreen> {
           SizedBox(
             height: 20,
           ),
-          Container(
-            child: ListView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: coOrdinates[0].length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    padding: EdgeInsets.only(bottom: 15),
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(5)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.5,
-                          child: Text(
-                            coOrdinates[0][index][0],
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                            ),
+          isLoading
+              ? CircularProgressIndicator()
+              : Container(
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: coOrdinates[0].length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          padding: EdgeInsets.only(bottom: 15),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.5,
+                                child: Text(
+                                  coOrdinates[0][index][0],
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.3,
+                                child: Text(
+                                  "${calculateDistance(coOrdinates[0][index][1], LatLng(myPosition!.latitude, myPosition!.longitude)).toString()} KM",
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 15),
+                                ),
+                              )
+                            ],
                           ),
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.3,
-                          child: Text(
-                            "${calculateDistance(coOrdinates[0][index][1], LatLng(myPosition!.latitude, myPosition!.longitude)).toString()} KM",
-                            style: TextStyle(color: Colors.black, fontSize: 15),
-                          ),
-                        )
-                      ],
-                    ),
-                  );
-                }),
-          ),
+                        );
+                      }),
+                ),
         ],
       ),
     );
@@ -275,7 +297,7 @@ class _XrayTestScreenState extends State<XrayTestScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dianose xray for covid"),
+        title: Text("Diagnose xray for covid"),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -284,140 +306,158 @@ class _XrayTestScreenState extends State<XrayTestScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 SizedBox(height: 40),
-                Container(
-                  color: Colors.yellow[500],
-                  padding: EdgeInsets.all(10),
-                  child: Text(
-                      " * Note : The Tests done here are not accurate for medical use . Do not make decidions based on these prediction. *",
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 20,
-                      )),
-                ),
+                disclaimer(),
                 SizedBox(
                   height: 10,
                 ),
-                Text("COVID Prediction",
-                    style: TextStyle(
-                      color: Color(0xFFE99600),
-                      fontWeight: FontWeight.w500,
-                      fontSize: 28,
-                    )),
+                buildTitle(),
                 //  hospitalRecomendation(),
                 SizedBox(height: 30),
-                Center(
-                    child: _loading
-                        ? Container(
-                            width: 200,
-                            child: Column(
-                              children: <Widget>[
-                                // Image.network(
-                                //   "",
-                                //   cacheHeight: 200,
-                                //   cacheWidth: 200,
-                                // ),
-                                SizedBox(height: 50),
-                              ],
-                            ))
-                        : Container(
-                            alignment: Alignment.center,
-                            child: Column(
-                              children: <Widget>[
-                                Container(
-                                  height: 250,
-                                  child: Image.file(_image!),
-                                ),
-                                SizedBox(height: 20),
-                                _output != null
-                                    ? Container(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal: 10, vertical: 20),
-                                        child: Text(
-                                          buildResult(_output![0]),
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20),
-                                        ),
-                                      )
-                                    : Container(),
-                                _output![0]['index'] == 0
-                                    ? hospitalRecomendation()
-                                    : SizedBox.shrink()
-                              ],
-                            ),
-                          )),
-                Container(
-                  child: new Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      new Container(
-                        padding: new EdgeInsets.only(top: 1.0),
-                        child: new Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            new Text('  ',
-                                style: new TextStyle(
-                                  fontSize: 20.0,
-                                  fontFamily: 'Roboto',
-                                  color: new Color(0xFF26C6DA),
-                                )),
-                            new Text(
-                              '',
-                              style: new TextStyle(
-                                  fontSize: 35.0,
-                                  fontFamily: 'Roboto',
-                                  color: new Color(0xFF26C6DA)),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                Center(child: _loading ? loadingWidget() : results()),
+                newMethod(),
                 Container(
                     width: MediaQuery.of(context).size.width,
                     child: Column(
                       children: <Widget>[
-                        GestureDetector(
-                          onTap: () => pickImage(),
-                          child: Container(
-                              width: MediaQuery.of(context).size.width - 110,
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 24,
-                                vertical: 17,
-                              ),
-                              decoration: BoxDecoration(
-                                  color: Colors.teal,
-                                  borderRadius: BorderRadius.circular(6)),
-                              child: Text("Take a photo",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 20))),
-                        ),
+                        pickImageFromCamera(context),
                         SizedBox(height: 10),
-                        GestureDetector(
-                          onTap: () => pickGalleryImage(),
-                          child: Container(
-                              width: MediaQuery.of(context).size.width - 110,
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.symmetric(
-                                horizontal: 24,
-                                vertical: 17,
-                              ),
-                              decoration: BoxDecoration(
-                                  color: Colors.orange,
-                                  borderRadius: BorderRadius.circular(6)),
-                              child: Text("Select from the storage",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 20))),
-                        ),
+                        pickImageFromGallery(context),
                       ],
                     )),
               ],
             )),
       ),
+    );
+  }
+
+  Container newMethod() {
+    return Container(
+      child: new Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          new Container(
+            padding: new EdgeInsets.only(top: 1.0),
+            child: new Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Text('  ',
+                    style: new TextStyle(
+                      fontSize: 20.0,
+                      fontFamily: 'Roboto',
+                      color: new Color(0xFF26C6DA),
+                    )),
+                new Text(
+                  '',
+                  style: new TextStyle(
+                      fontSize: 35.0,
+                      fontFamily: 'Roboto',
+                      color: new Color(0xFF26C6DA)),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Text buildTitle() {
+    return Text("COVID Prediction",
+        style: TextStyle(
+          color: Color(0xFFE99600),
+          fontWeight: FontWeight.w500,
+          fontSize: 28,
+        ));
+  }
+
+  Container results() {
+    return Container(
+      alignment: Alignment.center,
+      child: Column(
+        children: <Widget>[
+          Container(
+            height: 250,
+            child: Image.file(_image!),
+          ),
+          SizedBox(height: 20),
+          _output != null
+              ? Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                  child: Text(
+                    buildResult(_output![0]),
+                    style: TextStyle(color: Colors.black, fontSize: 20),
+                  ),
+                )
+              : Container(),
+          _output![0]['index'] == 0
+              ? hospitalRecomendation()
+              : SizedBox.shrink()
+        ],
+      ),
+    );
+  }
+
+  Container loadingWidget() {
+    return Container(
+        width: 200,
+        child: Column(
+          children: <Widget>[
+            // Image.network(
+            //   "",
+            //   cacheHeight: 200,
+            //   cacheWidth: 200,
+            // ),
+            SizedBox(height: 50),
+          ],
+        ));
+  }
+
+  Container disclaimer() {
+    return Container(
+      color: Colors.yellow[500],
+      padding: EdgeInsets.all(10),
+      child: Text(
+          " * Note : The Tests done here are not accurate for medical use . Do not make decidions based on these prediction. *",
+          style: TextStyle(
+            color: Colors.red,
+            fontWeight: FontWeight.w400,
+            fontSize: 20,
+          )),
+    );
+  }
+
+  GestureDetector pickImageFromGallery(BuildContext context) {
+    return GestureDetector(
+      onTap: () => pickGalleryImage(),
+      child: Container(
+          width: MediaQuery.of(context).size.width - 110,
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(
+            horizontal: 24,
+            vertical: 17,
+          ),
+          decoration: BoxDecoration(
+              color: Colors.orange, borderRadius: BorderRadius.circular(6)),
+          child: Text("Select from the storage",
+              style: TextStyle(color: Colors.white, fontSize: 20))),
+    );
+  }
+
+  GestureDetector pickImageFromCamera(BuildContext context) {
+    return GestureDetector(
+      onTap: () => pickImage(),
+      child: Container(
+          width: MediaQuery.of(context).size.width - 110,
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(
+            horizontal: 24,
+            vertical: 17,
+          ),
+          decoration: BoxDecoration(
+              color: Colors.teal, borderRadius: BorderRadius.circular(6)),
+          child: Text("Take a photo",
+              style: TextStyle(color: Colors.white, fontSize: 20))),
     );
   }
 }
